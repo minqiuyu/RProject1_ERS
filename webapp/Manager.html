@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  
-  <title>Home</title>
+ <link rel="stylesheet" type="text/css" href="pagecss.css">
+  <title>Management Home</title>
   <!-- if IE, use latest rendering -->
   <meta http-equiv ="X-UA-Compatible" content="IE=edge">
 </head>
@@ -16,13 +16,13 @@
     </div>
     <table id="Empinfo" class="table">
       <tr style="border:2px solid black;">
-        <th>Employee Info:</th> <th><a href=# onclick="logout()">Log Out</a></th>
+        <th>User Info:</th> <th><a href=# onclick="logout()">Log Out</a></th>
       </tr>
       <tr>
-        <td style="border:2px solid black;">Employee Name:</td><td id="empname" style="border:2px solid black;">DUMMY</td>
+        <td style="border:2px solid black;">Manager Name:</td><td id="empname" style="border:2px solid black;">DUMMY</td>
       </tr>
       <tr>
-        <td style="border:2px solid black;">Employee Email:</td><td id="empmail" style="border:2px solid black;">DUMMY</td>
+        <td style="border:2px solid black;">Manager Email:</td><td id="empmail" style="border:2px solid black;">DUMMY</td>
       </tr>
     </table>
   
@@ -35,9 +35,40 @@
       <th>#</th>
       <th>Status</th>
       <th>Date Submitted</th>
-      <th>Date Viewed</th>
+      <th>Description</th>
       <th>Amount</th>
       <th>Action</th>
+    </tr>
+  </thead>
+  <tbody id="toReplace">
+    <tr>
+      <th scope="row">1</th>
+      <td>Dummy</td>
+      <td>Dummy</td>
+      <td>Dummy</td>
+      <td>Dummy</td>
+          <td>
+      <button class="btn btn-primary btn-xs" ng-click="r.changeView('requests/edit/' + request.id)">
+        <i class="fa fa-pencil-square-o"></i>Approve
+      </button>
+      <button class="btn btn-primary btn-xs" ng-click="r.changeView('requests/edit/' + request.id)">
+        <i class="fa fa-step-backward"></i>
+        <i class="fa fa-step-forward"></i>Deny
+      </button>
+    </td>
+    </tr>
+  </tbody>
+</table>
+     <h1>Past Requests</h1>
+  <table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Status</th>
+      <th>Date Submitted</th>
+      <th>Description</th>
+      <th>Amount</th>
+      <th>Action Taken</th>
     </tr>
   </thead>
   <tbody id="toReplace">
@@ -53,7 +84,7 @@
 </table>
 </div>
 </body>
-<script>
+<!--<script>
 
 function onLoad(){
 	if(!sessionStorage.user){
@@ -86,5 +117,5 @@ function approval(RID, bool){
 	xhttp.send();
   
 }
-</script>
+</script>-->
 </html>
